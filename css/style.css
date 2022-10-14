@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+::selection {
+    background-color: #1d0cbb;
+    color: #FFF;
+}
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #010038;
+}
+.container {
+    width: 500px;
+    background: #090057;
+    box-shadow:  5px 5px 10px #070041, -5px -5px 10px #0b006d;
+    color: #FFF;
+    border-radius: 50px;
+}
+.container .head-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px 10px;
+}
+.head-content .current-date {
+    font-size: 1.50rem;
+}
+.head-content span {
+    text-align: center;
+    margin: 0 5px;
+    line-height: 40px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #060133;
+    color: #FFF;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.head-content span:hover {
+    background-color: #080422;
+    transform: scale(1.1);
+}
+.calendar {
+    padding: 30px;
+}
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.calendar .days {
+    margin-bottom: 20px;
+}
+.calendar .weeks li {
+    font-weight: 700;
+}
+.calendar ul li {
+    position: relative;
+    width: calc(100% / 7);
+}
+.calendar .days li {
+    z-index: 1;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.days li.inactive {
+    color: #b3b3b3;
+}
+.days li.active {
+    color: #FFF;
+}
+.calendar .days li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    z-index: -1;
+}
+.days li:hover::before, .days li.active::before {
+    background-color: #080422;
+}
+@media (max-width: 515px) {
+    .container {
+        width: 90vw;
+    }
+    .head-content .current-date {
+        font-size: 5.1vw;
+    }
+    .head-content span {
+        line-height: 30px;
+        font-size: 17px;
+        width: 30px;
+        height: 30px;
+    }
+    .calendar {
+        padding: 20px;
+    }
+    .calendar ul {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .calendar ul li {
+        position: relative;
+        width: calc(100% / 7);
+        font-size: 3vw;
+    }
+}

@@ -109,12 +109,6 @@ body {
     .calendar {
         padding: 20px;
     }
-    .calendar ul {
-        display: flex;
-        list-style: none;
-        flex-wrap: wrap;
-        text-align: center;
-    }
     .calendar ul li {
         position: relative;
         width: calc(100% / 7);
